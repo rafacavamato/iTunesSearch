@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		276E70D51AB085320042EB9C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 276E70D71AB085320042EB9C /* Localizable.strings */; };
 		27AF32E91AAF2BCC0097FFA3 /* TextFieldControler.m in Sources */ = {isa = PBXBuildFile; fileRef = 27AF32E81AAF2BCC0097FFA3 /* TextFieldControler.m */; };
 		27AF32EB1AAF2BEF0097FFA3 /* TextFieldController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27AF32EA1AAF2BEF0097FFA3 /* TextFieldController.xib */; };
 		92C21CB61AAE757A0052ABE6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C21CB51AAE757A0052ABE6 /* main.m */; };
@@ -32,6 +33,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		276E70D61AB085320042EB9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		276E70D81AB085360042EB9C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		276E70D91AB085720042EB9C /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
+		276E70DA1AB085830042EB9C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		27AF32E71AAF2BCC0097FFA3 /* TextFieldControler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldControler.h; sourceTree = "<group>"; };
 		27AF32E81AAF2BCC0097FFA3 /* TextFieldControler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldControler.m; sourceTree = "<group>"; };
 		27AF32EA1AAF2BEF0097FFA3 /* TextFieldController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldController.xib; sourceTree = "<group>"; };
@@ -145,6 +150,7 @@
 				92C21CDE1AAE76930052ABE6 /* TableViewCell.h */,
 				92C21CDF1AAE76930052ABE6 /* TableViewCell.m */,
 				92C21CE01AAE76930052ABE6 /* TableViewCell.xib */,
+				276E70D71AB085320042EB9C /* Localizable.strings */,
 			);
 			name = Celulas;
 			sourceTree = "<group>";
@@ -221,6 +227,8 @@
 			knownRegions = (
 				en,
 				Base,
+				pt,
+				fr,
 			);
 			mainGroup = 92C21CA71AAE757A0052ABE6;
 			productRefGroup = 92C21CB11AAE757A0052ABE6 /* Products */;
@@ -238,6 +246,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				276E70D51AB085320042EB9C /* Localizable.strings in Resources */,
 				92C21CC11AAE757A0052ABE6 /* Images.xcassets in Resources */,
 				27AF32EB1AAF2BEF0097FFA3 /* TextFieldController.xib in Resources */,
 				92C21CE21AAE76930052ABE6 /* TableViewCell.xib in Resources */,
@@ -286,6 +295,20 @@
 			targetProxy = 92C21CCA1AAE757A0052ABE6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		276E70D71AB085320042EB9C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				276E70D61AB085320042EB9C /* Base */,
+				276E70D81AB085360042EB9C /* en */,
+				276E70D91AB085720042EB9C /* pt */,
+				276E70DA1AB085830042EB9C /* fr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		92C21CD11AAE757A0052ABE6 /* Debug */ = {

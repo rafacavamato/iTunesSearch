@@ -13,6 +13,10 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    
+     [_procuraButton setTitle:NSLocalizedString(@"Search",nil) forState:UIControlStateNormal];
+    
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -21,5 +25,6 @@
     // Configure the view for the selected state
 }
 - (IBAction)procuraButton:(id)sender {
+    [sender setTitle:NSLocalizedString(@"Search",nil) forState:UIControlStateNormal];
 }
 @end

@@ -12,5 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *procura;
 - (IBAction)procuraButton:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *procuraButton;
 
 @end
