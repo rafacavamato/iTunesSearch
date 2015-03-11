@@ -24,6 +24,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    UINib *nib2 = [UINib nibWithNibName:@"TextFieldController" bundle:nil];
+    [self.tableview registerNib:nib2 forCellReuseIdentifier:@"textPadrao"];
+    
     UINib *nib = [UINib nibWithNibName:@"TableViewCell" bundle:nil];
     [self.tableview registerNib:nib forCellReuseIdentifier:@"celulaPadrao"];
     
@@ -31,7 +34,9 @@
     midias = [itunes buscarMidias:@"Apple"];
     
 #warning Necessario para que a table view tenha um espaco em relacao ao topo, pois caso contrario o texto ficara atras da barra superior
+ 
     self.tableview.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.tableview.bounds.size.width, 15.f)];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,7 +54,11 @@
     return [midias count];
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath, {
+    if (indexPath.row == 0){
+        TableViewCell *celula = [self.tableview dequeueReusableCellWithIdentifier:@"textPadrao"];
+        return celula;
+    }
     TableViewCell *celula = [self.tableview dequeueReusableCellWithIdentifier:@"celulaPadrao"];
     
     Filme *filme = [midias objectAtIndex:indexPath.row];
