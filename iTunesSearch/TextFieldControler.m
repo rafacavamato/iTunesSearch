@@ -7,6 +7,10 @@
 //
 
 #import "TextFieldControler.h"
+#import "TableViewController.h"
+#import "TableViewCell.h"
+#import "iTunesManager.h"
+#import "Entidades/Filme.h"
 
 @implementation TextFieldControler
 
@@ -27,4 +31,11 @@
 - (IBAction)procuraButton:(id)sender {
     [sender setTitle:NSLocalizedString(@"Search",nil) forState:UIControlStateNormal];
 }
+//#pragma mark - searchBar
+//- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {iTunesManager *itunes = [iTunesManager sharedInstance];
+//    midias = [itunes buscarMidias:searchBar.text];
+    //Filme *filme = [midias objectAtIndex:indexPath.row];
+    //filmes = [[iTunesManager sharedInstance]buscarMidias:searchBar.text];
+//    [self.TableView reloadData];
+//}
 @end

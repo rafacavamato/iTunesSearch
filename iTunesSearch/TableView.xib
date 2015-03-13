@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TableViewController">
             <connections>
+                <outlet property="search" destination="gNE-4P-Njh" id="zfz-e2-zCH"/>
                 <outlet property="tableview" destination="z24-IP-C1d" id="fiF-7d-ri3"/>
                 <outlet property="view" destination="z24-IP-C1d" id="NXu-VO-9o4"/>
             </connections>
@@ -15,11 +16,26 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <searchBar key="tableHeaderView" contentMode="redraw" id="gNE-4P-Njh">
+                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                <textInputTraits key="textInputTraits"/>
+                <connections>
+                    <outlet property="delegate" destination="-1" id="KOl-qy-1ab"/>
+                </connections>
+            </searchBar>
             <connections>
                 <outlet property="dataSource" destination="-1" id="grn-Rq-4Ux"/>
                 <outlet property="delegate" destination="-1" id="M2x-yu-OMO"/>
             </connections>
             <point key="canvasLocation" x="-135" y="440"/>
         </tableView>
+        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="gHa-D1-Ghz">
+            <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+            <textInputTraits key="textInputTraits"/>
+            <point key="canvasLocation" x="-226.5" y="214"/>
+        </textField>
     </objects>
 </document>
