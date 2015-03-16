@@ -1,14 +1,14 @@
 //
-//  Filme.h
+//  eBook.h
 //  iTunesSearch
 //
-//  Created by joaquim on 09/03/15.
+//  Created by Rafael Cavalcante Ferreira Santos Matos on 3/13/15.
 //  Copyright (c) 2015 joaquim. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface Filme : NSObject
+@interface eBook : NSObject
 
 @property (nonatomic, strong) NSString *nome;
 @property (nonatomic, strong) NSString *trackId;

@@ -10,9 +10,15 @@
 #import "TableViewCell.h"
 #import "iTunesManager.h"
 #import "Entidades/Filme.h"
+#import "eBook.h"
+#import "Podcast.h"
+#import "Musica.h"
 
 @interface TableViewController () {
-    NSArray *midias;
+    NSArray *filmes;
+    NSArray *eBooks;
+    NSArray *podcasts;
+    NSArray *musicas;
 }
 
 @end
@@ -27,6 +33,8 @@
     
 }
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -34,7 +42,7 @@
     [self.tableview registerNib:nib forCellReuseIdentifier:@"celulaPadrao"];
     
     iTunesManager *itunes = [iTunesManager sharedInstance];
-    midias = [itunes buscarMidias:@"Apple"];
+    
     
 #warning Necessario para que a table view tenha um espaco em relacao ao topo, pois caso contrario o texto ficara atras da barra superior
  
@@ -50,31 +58,126 @@
 
 #pragma mark - Metodos do UITableViewDataSource
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 4;
 }
 
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [midias count];
+    
+    NSInteger aux = 0;
+    switch (section) {
+        
+        
+        case 0:
+            aux = filmes.count;
+            
+            break;
+            
+        case 1:
+           aux = musicas.count;
+            break;
+            
+        case 2:
+            aux = eBooks.count;
+            break;
+            
+        case 3:
+            aux = podcasts.count;
+            break;
+            
+        default:
+            break;
+    }
+    
+    return aux;
+}
+
+-(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    NSString* titulo;
+    switch (section) {
+        case 0:
+            titulo = @"Filmes";
+            break;
+    
+        case 1:
+            titulo = @"Musicas";
+            break;
+        case 2:
+            titulo = @"eBooks";
+            break;
+        case 3:
+            titulo = @"Podcasts";
+            break;
+        default:
+            break;
+    }
+    return titulo;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath, {
    
     TableViewCell *celula = [self.tableview dequeueReusableCellWithIdentifier:@"celulaPadrao"];
+    Filme *filme;
+    eBook *eBook;
+    Podcast *podcast;
+    Musica *musica;
     
-    Filme *filme = [midias objectAtIndex:indexPath.row];
     
+    switch (indexPath.section) {
+            
+        case 0:
+            
+    filme = [filmes objectAtIndex:indexPath.row];
     [celula.nome setText:filme.nome];
-    [celula.tipo setText:@"Filme"];
+    [celula.tipo setText:filme.tipo];
     [celula.genero setText:filme.genero];
-    
+            
+            break;
+        
+        case 1:
+            
+            musica = [musicas objectAtIndex:indexPath.row];
+            [celula.nome setText:musica.nome];
+            [celula.tipo setText:musica.tipo];
+            [celula.genero setText:musica.genero];
+            
+            break;
+            
+            
+            
+        case 2:
+            
+            eBook = [eBooks objectAtIndex:indexPath.row];
+            [celula.nome setText:eBook.nome];
+            [celula.tipo setText:eBook.tipo];
+            [celula.genero setText:eBook.genero];
+            
+            break;
+            
+            
+            
+        case 3:
+            
+            podcast = [podcasts objectAtIndex:indexPath.row];
+            [celula.nome setText:podcast.nome];
+            [celula.tipo setText:podcast.tipo];
+            [celula.genero setText:podcast.genero];
+            
+            break;
+            
+            
+        default:
+            break;
+    }
     return celula;
 }
-
+#pragma mark - searchBar
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     iTunesManager *itunes = [iTunesManager sharedInstance];
-    midias = [itunes buscarMidias:searchBar.text];
-    //Filme *filme = [midias objectAtIndex:indexPath.row];
-    //filmes = [[iTunesManager sharedInstance]buscarMidias:searchBar.text];
+    filmes = [itunes buscarFilme:searchBar.text];
+    musicas = [itunes buscarMusica:searchBar.text];
+    eBooks = [itunes buscarEBook:searchBar.text];
+    podcasts   = [itunes buscarPodcast:searchBar.text];
     [self.tableview reloadData];
 }
 
